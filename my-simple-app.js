@@ -15,6 +15,9 @@ app.get('/', function (req, res) {
   res.send(homepage.content())
 })
 
+app.get('/about', function (req, res) {
+  return res.json({ firstName: 'Tobi' })
+})
 
 app.listen(port, () =>
 console.log(`Example app listening on port ${port}!`))
