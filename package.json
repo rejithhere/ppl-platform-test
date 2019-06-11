@@ -1,6 +1,6 @@
 {
   "name": "anz-platform-test",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Simple Test Application",
   "main": "my-simple-app.js",
   "scripts": {
