@@ -16,7 +16,12 @@ app.get('/', function (req, res) {
 })
 
 app.get('/about', function (req, res) {
-  return res.json({ firstName: 'Tobi' })
+  return res.json(
+{
+"version": "1.0",
+"lastcommitsha": "abc57858585",
+"description" : "pre-interview technical test"
+})
 })
 
 app.listen(port, () =>
