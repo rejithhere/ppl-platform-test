@@ -30,5 +30,13 @@ The app is hooked into its own Azure DevOps pipeline, and will run through all b
 
 Pipeline build & test config for this test is held in the file azure-pipelines.yml
 
+At the end of the pipeline if all quality checks are passed, the app will be containerised as a single artefact encapsulating all the dependencies. 
+
+# Version Control (Not included due to security reasons) 
+New Docker images will be built at the end of each build pipeline and will be pushed to Docker Hub / Azure Container Registry. 
+Tags with $(Build.BuildId) will be used which willl help to track the versions 
+
+
+
 
 
