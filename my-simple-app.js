@@ -22,12 +22,13 @@ app.get('/', function (req, res) {
 })
 
 app.get('/about', function (req, res) {
-  return res.json(
-{
+  return res.json({
+PlatformTestApp: [{
 "version": pjson.version,
 "lastcommitsha": revision,
 "description" : "pre-interview technical test"
-})
+}]} 
+)
 })
 
 app.listen(port, () =>
