@@ -1,1 +1,41 @@
 # anz-platform-test
+
+This is a simple NodeJS app, along with a unit test. 
+The following diagram shows the high level architecture of the app:
+
+┌─────────────────────────────────────┐
+│             my-simple-app           │
+│                                     │
+│                                     │
+│                                     │
+├────────────────┤          ├─────────┤
+│ /version (API) │◀────────▶│ (JSON)  │
+└────────────────┴──────────┴─────────┘
+
+There is a single GET /version returns a JSON values including the version# from the package.json, Last Commit SHA and a Hardcoded description. 
+
+Manual app startup & test execution
+
+Starting the app
+
+To start the app running in a CI-ready state
+
+$ NODE_ENV=test npm install && node helloworld.js
+
+Quality Control : 
+    Running unit tests
+        $ npm run unittests
+        
+  Security Checks 
+    Open-source vulnerability scans
+        The chain of open-source dependencies used in this application is scanned on every checkin by Whitesource Bolt.       Details for how to set this up for Github repos are at https://whitesource.atlassian.net/wiki/spaces/WD/pages/697696422/GitHub+Integration
+        
+        
+Automated CI pipeline execution
+
+The app is hooked into its own Azure DevOps pipeline, and will run through all build/test steps automatically whenever a pull request is made to this repo.
+
+Pipeline build & test config for this test is held in the file azure-pipelines.yml
+
+
+
