@@ -1,6 +1,19 @@
-# anz-platform-test
+# Anz-Platform-Test
 
 This is a simple NodeJS app, along with a unit test and a few performance tests. 
+
+    ┌─────────────────────────────────────┐
+    │             My-Simple-App           │
+    │                                     │
+    │                                     │
+    │                                     │
+    ├────────────────┐          ┌─────────┤
+    │    / (HTML)    │◀────────▶│ (HTML)  │      
+    ├────────────────┤          ├─────────┤
+    │ /version (API) │◀────────▶│ (JSON)  │
+    └────────────────┴──────────┴─────────┘
+    
+      
 
 There is a single GET /version returns a JSON values including the version# from the package.json, Last Commit SHA and a Hardcoded description. 
 
