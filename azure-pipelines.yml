@@ -30,6 +30,10 @@ steps:
 - script: |
     node my-simple-app.js &
     APP_PID=$!
+    npm install -g artillery
+    artillery -V
+    if [ $? -ne 0 ]; then kill $APP_PID && exit 1; fi
+    kill $APP_PID
   displayName: 'Run Artillery performance test'    
     
 - script: |
