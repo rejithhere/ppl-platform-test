@@ -29,7 +29,7 @@ steps:
       
 - script: |
     # Start the app running, and capture the PID so we can kill it later
-    node helloworld.js &
+    node my-simple-app.js &
     APP_PID=$!
     # Install the artillery load testing tool
     npm install -g artillery
