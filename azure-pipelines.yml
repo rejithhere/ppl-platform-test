@@ -36,9 +36,9 @@ steps:
     sonar-scanner -h
     # Run sonar-scanner
     sonar-scanner \
-  	-Dsonar.projectKey=rejithhere_anz-platform-test \
-  	-Dsonar.organization=rejithhere-github \
-  	-Dsonar.sources=. \
-  	-Dsonar.host.url=https://sonarcloud.io \
-  	-Dsonar.login=9f9c4129eb9264d25aec63f1716023e1e670a5a7
+  -Dsonar.projectKey=rejithhere_anz-platform-test \
+  -Dsonar.organization=rejithhere-github \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.login=9f9c4129eb9264d25aec63f1716023e1e670a5a7
   displayName: 'Run sonarcloud code quality tests'  
