@@ -4,6 +4,7 @@
   "description": "Simple Test Application",
   "main": "my-simple-app.js",
   "scripts": {
+    "start": "node my-simple-app.js",
     "test": "mocha tests/unit/*.js",
     "unittests": "MOCHA_FILE=./TEST-unittests.xml PROPERTIES=testsuiteTitle:UnitTests mocha --reporter mocha-junit-reporter tests/unit/*.js"
   },
