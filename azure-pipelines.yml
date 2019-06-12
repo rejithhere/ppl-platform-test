@@ -28,11 +28,9 @@ steps:
   displayName: 'Run unit tests'  
       
 - script: |
-    # Start the app running, and capture the PID so we can kill it later
     node my-simple-app.js &
     APP_PID=$!
-    
-   displayName: 'Run Artillery performance test'    
+  displayName: 'Run Artillery performance test'    
     
 - script: |
     docker build -t $(dockerId)/$(imageName) .     
