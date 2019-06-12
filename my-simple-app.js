@@ -1,6 +1,12 @@
 'use strict'
 const express = require('express')
 var app = express()
+var pjson = require('./package.json');
+
+
+var revision = require('child_process')
+    .execSync('git rev-parse HEAD')
+    .toString().trim()
 
 const port = 8080
 
@@ -18,8 +24,8 @@ app.get('/', function (req, res) {
 app.get('/about', function (req, res) {
   return res.json(
 {
-"version": "1.0.0",
-"lastcommitsha": "abc57858585",
+"version": pjson.version,
+"lastcommitsha": revision,
 "description" : "pre-interview technical test"
 })
 })
