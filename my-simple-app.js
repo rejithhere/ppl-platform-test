@@ -10,6 +10,10 @@ var revision = require('child_process')
 
 const port = 8080
 
+app.get('/', function (req, res) {
+  res.send(homepage.content())
+})
+
 app.get('/version', function (req, res) {
   return res.json({
 PlatformTestApp: [{
