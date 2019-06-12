@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  dockerId: ravre03
+  imageName: platform-test-app
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -22,5 +26,8 @@ steps:
 - script: |
     npm run unittests
   displayName: 'Run unit tests'  
+  
+- script: |
+    docker build -t $(dockerId)/$(imageName) .  
   
   
