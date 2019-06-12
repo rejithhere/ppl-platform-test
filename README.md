@@ -1,6 +1,6 @@
 # Anz-Platform-Test
 
-This is a simple NodeJS app, along with a unit test and a few performance tests. 
+This is a simple NodeJS app, along with a unit test and a few performance tests. The following diagram shows the high level architecture of the app:
 
     ┌─────────────────────────────────────┐
     │             My-Simple-App           │
@@ -15,7 +15,7 @@ This is a simple NodeJS app, along with a unit test and a few performance tests.
     
       
 
-There is a single GET /version returns a JSON values including the version# from the package.json, Last Commit SHA and a Hardcoded description. 
+There is a single HTML page, accessed using the / URL and GET /version returns a JSON values including the version# from the package.json, Last Commit SHA and a Hardcoded description. 
 
 # Manual app startup & test execution
 
