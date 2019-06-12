@@ -18,3 +18,27 @@ steps:
 - script: |
     npm install
   displayName: 'npm install and build'
+  
+- script: |
+    # First gather lines-of-coverage data from the test cases
+    # node_modules/nyc/bin/nyc.js --reporter=lcov --reporter=text-lcov npm test
+    # Download sonar-scanner
+    SONARCLOUDDIR=/tmp
+    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip -O $SONARCLOUDDIR/sonar.zip
+    unzip $SONARCLOUDDIR/sonar.zip -d /tmp
+    # Print out some diagnostic info
+    ls -al $SONARCLOUDDIR
+    cat $SONARCLOUDDIR/sonar-scanner-3.2.0.1227-linux/conf/sonar-scanner.properties
+    PATH=$SONARCLOUDDIR/sonar-scanner-3.2.0.1227-linux/bin:$PATH
+    echo $PATH
+    APP_DIR=$(pwd)
+    ls -al
+    sonar-scanner -h
+    # Run sonar-scanner
+    sonar-scanner \
+  	-Dsonar.projectKey=rejithhere_anz-platform-test \
+  	-Dsonar.organization=rejithhere-github \
+  	-Dsonar.sources=. \
+  	-Dsonar.host.url=https://sonarcloud.io \
+  	-Dsonar.login=9f9c4129eb9264d25aec63f1716023e1e670a5a7
+  displayName: 'Run sonarcloud code quality tests'  
