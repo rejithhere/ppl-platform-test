@@ -1,6 +1,6 @@
 # anz-platform-test
 
-This is a simple NodeJS app, along with a unit test. 
+This is a simple NodeJS app, along with a unit test and a few performance tests. 
 
 There is a single GET /version returns a JSON values including the version# from the package.json, Last Commit SHA and a Hardcoded description. 
 
@@ -14,6 +14,10 @@ $ NODE_ENV=test npm install && node helloworld.js
 # Quality Control : 
     Running unit tests
         $ npm run unittests
+        
+# Running performance tests
+    $ npm install -g artillery
+    $ artillery run test/performance/performance.yml
         
 # Security Checks 
     Open-source vulnerability scans
